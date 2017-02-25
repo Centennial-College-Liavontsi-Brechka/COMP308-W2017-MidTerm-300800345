@@ -1,5 +1,5 @@
 {
-  "name": "comp308-w2017-midterm",
+  "name": "comp308-w2017-midterm-300800345",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -40,7 +40,7 @@
     "ExpressJS",
     "EJS"
   ],
-  "author": "Tom Tsiliopoulos",
+  "author": "Liavontsi Brechka",
   "license": "ISC",
   "bugs": {
     "url": ""
