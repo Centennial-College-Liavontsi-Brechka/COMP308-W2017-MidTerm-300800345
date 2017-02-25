@@ -36,6 +36,7 @@ router.get('/add', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
+    // rendering an empty details page
     res.render('books/details', {
         title: 'Add Book Details',
         books: {}
@@ -48,6 +49,7 @@ router.post('/add', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
+    // instantiating a new book model based on form parameters
     let newBook = book({
         "Title": req.body.title,
         "Price": req.body.price,
@@ -55,6 +57,7 @@ router.post('/add', (req, res, next) => {
         "Genre": req.body.genre
     });
 
+    // creating a new book document in database
     book.create(newBook, (err, book) => {
         if (err) {
             console.log(err);
@@ -100,8 +103,10 @@ router.post('/:id', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
+    // id from URL
     let id = req.params.id;
 
+    // instantiating a new book model based on form parameters
     let updatedBook = book({
         "_id": id,
         "Title": req.body.title,
@@ -110,6 +115,7 @@ router.post('/:id', (req, res, next) => {
         "Genre": req.body.genre
     });
 
+    // updating a book document in database
     book.update({_id: id}, updatedBook, (err) => {
         if(err) {
             console.log(err);
@@ -126,8 +132,10 @@ router.get('/delete/:id', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
+    // id from URL
     let id = req.params.id;
 
+    // removing book document from db
     book.remove({_id: id}, (err) => {
         if(err) {
             console.log(err);
