@@ -1,3 +1,10 @@
+/**
+ * @author Liavontsi Brechka
+ * @studentID 300800345
+ * @date April 25, 2017
+ * @description Midterm test
+ */
+
 module.exports = {
     //local MongoDB deployment ->
     // "URI": "mongodb://localhost/books308"
