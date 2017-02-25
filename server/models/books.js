@@ -1,3 +1,10 @@
+/**
+ * @author Liavontsi Brechka
+ * @studentID 300800345
+ * @date April 25, 2017
+ * @description Midterm test
+ */
+
 let mongoose = require('mongoose');
 
 // create a model class

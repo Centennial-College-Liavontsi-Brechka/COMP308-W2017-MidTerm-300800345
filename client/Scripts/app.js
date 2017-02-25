@@ -1,3 +1,10 @@
+/**
+ * @author Liavontsi Brechka
+ * @studentID 300800345
+ * @date April 25, 2017
+ * @description Midterm test
+ */
+
 /* custom JS goes here */
 
 /* pagination code from http://www.bootply.com/lxa0FF9yhw */

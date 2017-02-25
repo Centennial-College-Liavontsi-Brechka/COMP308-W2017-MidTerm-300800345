@@ -1,3 +1,10 @@
+/**
+ * @author Liavontsi Brechka
+ * @studentID 300800345
+ * @date April 25, 2017
+ * @description Midterm test
+ */
+
 let app = require('./server/app');
 let debug = require('debug')('comp308-w2017-midterm:server');
 let http = require('http');
