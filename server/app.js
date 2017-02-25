@@ -13,6 +13,13 @@ let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 
+// authentication modules
+let session = require('express-session');
+let passport = require('passport');
+let passportlocal = require('passport-local');
+let flash = require('connect-flash');
+let LocalStrategy = passportlocal.Strategy;
+
 // import "mongoose" - required for DB Access
 let mongoose = require('mongoose');
 // URI
@@ -44,11 +51,27 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client')));
 
+// setup session
+app.use(session({
+    secret: "1234567890",
+    saveUninitialized: true,
+    resave: true
+}));
+
+// initialize passport and flash
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Passport User Configuration
+let User = require('./models/users');
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 // route redirects
 app.use('/', index);
 app.use('/books', books);
-
 
 // Handle 404 Errors
   app.use(function(req, res) {
